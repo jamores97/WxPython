@@ -1,0 +1,26 @@
+¿Qué es y para qué sirve?
+WxPython es un toolkit que envuelve la librería wxWidgets, dedicado para la versión 2.7 de Python, cuya principal funcionalidad es desarrollar interfaces gráficas para aplicaciones, ya sean en ventanas, menús, etc.
+Cabe destacar que, para la versión 3.0 de Python, se ha desarrollado otro toolkit similar a wxPython, llamado Project Phoenix, con ciertas mejoras.
+
+Principales módulos
+wx -> El conjunto de clases que aparece en en el espacio de nombres del main de wx
+wx.html -> Este módulo incluye una clase widget para un html genérico, solo soporta HTML y no javascript ni css. Es adecuado para mostrar documentos HTML simples, como la documentación de una aplicación o las páginas de ayuda integradas.
+wx.html2 -> Este módulo incluye una clase widget con soporte para los últimos estándares de HTML, javascript y css.
+wx.richtext -> Es una implementación de un control de texto capaz de mostrar múltiples estilos e imágenes.
+wx.msw -> Este módulo contiene varias clases solo disponibles para interfaces en windows.
+
+Principales funciones para una aplicación básica
+//Crear la base de la aplicación mediante una instancia de App
+app = wx.App();
+
+//Crear una ventana (frame) para la aplicación
+frame = wx.Frame(None, wx.ID_ANY, "Texto de prueba");
+
+//Centrar la ventana
+frame.Center();
+
+//Mostrar la ventana
+frame.show();
+
+//Mantener activo el programa y evitar que se cierre sin orden explícita
+app.MainLoop();
