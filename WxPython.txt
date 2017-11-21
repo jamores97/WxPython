@@ -9,18 +9,51 @@ wx.html2 -> Este módulo incluye una clase widget con soporte para los últimos es
 wx.richtext -> Es una implementación de un control de texto capaz de mostrar múltiples estilos e imágenes.
 wx.msw -> Este módulo contiene varias clases solo disponibles para interfaces en windows.
 
-Principales funciones para una aplicación básica
-//Crear la base de la aplicación mediante una instancia de App
-app = wx.App();
-
+Principales widgets
 //Crear una ventana (frame) para la aplicación
 frame = wx.Frame(None, wx.ID_ANY, "Texto de prueba");
 
-//Centrar la ventana
-frame.Center();
+//Crear un panel para la ventana
+pnl = wx.Panel(self)
 
-//Mostrar la ventana
-frame.show();
+//Crear un menú
+menu = wx.Menu()
 
-//Mantener activo el programa y evitar que se cierre sin orden explícita
-app.MainLoop();
+//Añadir iconos/shortcuts al menú
+menu = wx.Menu() //Creamos el menú
+
+icono = wx.MenuItem(menu, APP_EXIT, '&Quit\tCtrl+Q')
+icono.SetBitmap(wx.Bitmap('salir.jpeg'))
+fileMenu.AppendItem(icono)
+
+//Crear un botón
+btn = wx.Button(pnl, label='Close', pos=(20, 30))
+
+//Crear una línea
+wx.StaticLine(self, pos=(25, 50), size=(300,1))
+
+//Crear un texto y mostrarlo en un panel de la ventana
+txt = '''Lorem ipsum agirretxe lorea, inla um maquinote marea, insu laudrup pilsen lorrea bet aloem'''
+pnl = wx.Panel(self) //Creamos el panel
+
+st = wx.StaticText(pnl, label=txt, style=wx.ALIGN_CENTRE)
+
+//Crear checkbox
+pnl = wx.Panel(self) //Creamos el panel
+
+wx.CheckBox(pnl, label='Actualidad', pos=(15, 30))
+wx.CheckBox(pnl, label='Deporte', pos=(15, 55))
+wx.CheckBox(pnl, label='Ocio', pos=(15, 55))
+wx.CheckBox(pnl, label='Ocio', pos=(15, 55))
+
+//Crear elementos select (ComboBox)
+deportes = ['Futbol', 'Tenis', 'Baloncesto', 'Golf', 'Pádel', 'Natación', 'Ciclismo', 'Atletismo']
+cb = wx.ComboBox(pnl, pos=(60, 35), choices=deportes, style=wx.CB_READONLY)
+
+//Crear radio button
+pnl = wx.Panel(self) //Creamos el panel
+self.rb1 = wx.RadioButton(pnl, label='Hombre', pos=(10, 10), style=wx.RB_GROUP)
+self.rb1 = wx.RadioButton(pnl, label='Mujer', pos=(10, 10), style=wx.RB_GROUP)
+self.rb1 = wx.RadioButton(pnl, label='¿Juzgas mi género?', pos=(10, 10), style=wx.RB_GROUP)
+
+
