@@ -22,7 +22,7 @@ class Ventana(wx.Frame):
         gtb.Bind(wx.EVT_TOGGLEBUTTON, self.ToggleGreen)
         btb.Bind(wx.EVT_TOGGLEBUTTON, self.ToggleBlue)
 
-        self.SetSize((500, 400))
+        self.SetSize((300, 200))
         self.SetTitle('Formulario')
         self.Centre()
         self.Show(True)
